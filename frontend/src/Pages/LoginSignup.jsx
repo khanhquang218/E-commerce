@@ -21,7 +21,7 @@ const LoginSignup = () => {
 			method: 'POST',
 			headers: {
 				Accept: 'application/form-data',
-				'Content-Type': 'apllication/json',
+				'Content-Type': 'application/json',
 			},
 			body: JSON.stringify(formData),
 		})
@@ -43,7 +43,7 @@ const LoginSignup = () => {
 			method: 'POST',
 			headers: {
 				Accept: 'application/form-data',
-				'Content-Type': 'apllication/json',
+				'Content-Type': 'application/json',
 			},
 			body: JSON.stringify(formData),
 		})
@@ -53,9 +53,10 @@ const LoginSignup = () => {
 		if (responseData.success) {
 			localStorage.setItem('auth-token', responseData.token);
 			window.location.replace('/');
-		} else {
-			alert(responseData.errors);
 		}
+		// } else {
+		// 	alert(responseData.errors);
+		// }
 	};
 
 	return (
@@ -76,7 +77,7 @@ const LoginSignup = () => {
 				</button>
 				{state === 'Sign Up' ? (
 					<p className="loginsignup-login">
-						Already have an account?{' '}
+						Already have an account?
 						<span
 							onClick={() => {
 								setState('Login');
@@ -87,7 +88,7 @@ const LoginSignup = () => {
 					</p>
 				) : (
 					<p className="loginsignup-login">
-						Create an account?{' '}
+						Create an account?
 						<span
 							onClick={() => {
 								setState('Sign Up');
